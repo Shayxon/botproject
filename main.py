@@ -1,6 +1,8 @@
 import telebot
 import random as rn
 
+amallar = ['+', '-', 'x', '/']
+
 TOKEN = '7071070436:AAFXTvFBy4C8slS_5eMdnKOMY4ay9Y-OcBE'
 
 bot = telebot.TeleBot(TOKEN)
@@ -17,9 +19,17 @@ def reply_message(message):
     if message.text == 'savol':
         a = rn.randint(1, 99)
         b = rn.randint(1, 99)
-        savol = f"{a} + {b} = ?"
+        amal = amallar[rn.randint(0, 3)]
+        savol = f"{a} {amal} {b} = ?"
         bot.send_message(message.chat.id, savol)
-        javob = a + b
+        if amal == '+':
+            javob = a + b
+        elif amal == '-':
+            javob = a - b
+        elif amal == 'x':
+            javob = a * b
+        else:
+            javob = a // b      
     else:
         if message.text == str(javob):
             bot.reply_to(message, 'Javobingiz to\'gri')
