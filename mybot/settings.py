@@ -22,13 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-po1&jkr_6@h^wu0(p8*=x_izf@6op%^$)($qebdd1wtj%gk8s#'
 
-# TELEGRAM BOT TOKEN
-TOKEN = '7071070436:AAFXTvFBy4C8slS_5eMdnKOMY4ay9Y-OcBE'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mathtest.apps.MathtestConfig',
 ]
 
 MIDDLEWARE = [
